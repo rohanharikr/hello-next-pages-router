@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hellocoop/nextjs": "file:../packages-js/nextjs",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "next": "15.2.4"
