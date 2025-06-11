@@ -80,6 +80,6 @@ jobs:
           base: main
           title: "Renewed Certificate for hello-dev.net"
           body: "This PR updates the Let's Encrypt certificate. Please review and merge."
-          # labels: 'certificate-renewal'
-          # reviewers: 'DickHardt'
+          labels: "certificate-renewal"
+          reviewers: "rohanharikr"
           delete-branch: true
