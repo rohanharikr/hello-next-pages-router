@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       # - name: Configure AWS Credentials
       #   uses: aws-actions/configure-aws-credentials@v3
@@ -64,17 +67,13 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          # git checkout -b HELLO-DEV-CERT-RENEWAL
           echo "Renewal check at $(date -u)" > nginx/letsencrypt/.cert-renewal-log
-          # git add nginx/letsencrypt
-          # git commit -m "Renew Let's Encrypt certificate for *.hello-dev.net"
-          # git push
         env:
           TZ: UTC # Ensures date command runs correctly in UTC
 
       - name: Create Pull Request
         id: create-pr
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "Renew Let's Encrypt certificate for *.hello-dev.net"
           branch: HELLO-DEV-CERT-RENEWAL
