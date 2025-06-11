@@ -72,15 +72,14 @@ jobs:
         env:
           TZ: UTC # Ensures date command runs correctly in UTC
 
-
-      # - name: Create Pull Request
-      #   id: create-pr
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #       branch: HELLO-DEV-CERT-RENEWAL
-      #       base: main
-      #       title: 'Renewed Certificate for hello-dev.net'
-      #       body: "This PR updates the Let's Encrypt certificate. Please review and merge."
-      #       labels: 'certificate-renewal'
-      #       reviewers: 'DickHardt'
-      #       delete-branch: true
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: HELLO-DEV-CERT-RENEWAL
+          base: main
+          title: "Renewed Certificate for hello-dev.net"
+          body: "This PR updates the Let's Encrypt certificate. Please review and merge."
+          # labels: 'certificate-renewal'
+          # reviewers: 'DickHardt'
+          delete-branch: true
