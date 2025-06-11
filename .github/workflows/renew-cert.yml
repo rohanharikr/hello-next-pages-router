@@ -60,10 +60,10 @@ jobs:
       #       echo "Certificate renewal failed. Exiting workflow."
       #       exit 1
 
-      - name: Setup github-actions bot git identity
-        uses: qoomon/actions--setup-git@v1
-        with:
-          user: bot
+      # - name: Setup github-actions bot git identity
+      #   uses: qoomon/actions--setup-git@v1
+      #   with:
+      #     user: bot
 
       - name: Commit and Push Changes
         run: |
